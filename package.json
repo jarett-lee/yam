@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/jarett-lee/yam/issues"
   },
-  "homepage": "https://github.com/jarett-lee/yam#readme"
+  "homepage": "https://github.com/jarett-lee/yam#readme",
+  "devDependencies": {
+    "electron": "^2.0.5"
+  }
 }
