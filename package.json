@@ -1,0 +1,19 @@
+{
+  "name": "yam",
+  "version": "0.0.0",
+  "description": "Your average file manager",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jarett-lee/yam.git"
+  },
+  "author": "Jarett Lee <jarett.lee.pi@gmail.com>",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/jarett-lee/yam/issues"
+  },
+  "homepage": "https://github.com/jarett-lee/yam#readme"
+}
