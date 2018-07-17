@@ -1,3 +1,6 @@
+# Testing environment
+test-dir
+
 # Logs
 logs
 *.log
