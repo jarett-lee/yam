@@ -22,6 +22,6 @@ function showDir(parentPath) {
   })
 }
 
-showDir('test-images').catch((err) => {
+showDir('test-dir').catch((err) => {
   console.error(err);
 })
