@@ -26,4 +26,5 @@ const statdir = function(parentPath) {
 
 module.exports = {
   statdir,
+  stat,
 }
