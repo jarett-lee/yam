@@ -25,9 +25,20 @@ fs.readdir(parentDir, (err, files) => {
       file = files[i]
       stat = stats[i]
 
+      const span = document.createElement("span")
+      span.innerText = file
+
+      if (stat.isDirectory()) {
+        span.classList.add('dir')
+      } else if (stat.isFile()) {
+        span.classList.add('file')
+      } else {
+        throw new Error('Unexpected file type');
+      }
+
       const li = document.createElement("li")
-      li.innerText = file
-      li.class = file
+      li.append(span)
+
       ul.append(li)
     }
   })
