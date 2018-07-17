@@ -7,16 +7,29 @@
 </head>
 
 <body>
-  <h1>Hello World!</h1> We are using node
+  <h1>Hello World!</h1>
+  <p>
+    Here are all the local files:
+    <ul id="fileList">
+    </ul>
+  </p>
+
   <script>
-    document.write(process.versions.node)
-  </script>, Chrome
-  <script>
-    document.write(process.versions.chrome)
-  </script>, and Electron
-  <script>
-    document.write(process.versions.electron)
-  </script>.
+    const fs = require('fs')
+
+    fs.readdir('.', (err, files) => {
+      if (err) {
+        throw err
+      }
+
+      fileList = document.getElementById('fileList')
+      for (file of files) {
+        const li = document.createElement("li")
+        li.innerText = file
+        fileList.append(li)
+      }
+    })
+  </script>
 </body>
 
 </html>
