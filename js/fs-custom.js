@@ -10,18 +10,12 @@ const stat = function(varpath) {
   })
 }
 
-const statdir = function(parentPath) {
-  let files, len, childPaths
-
-  return Promise.resolve().then(() => {
-    return fse.readdir(parentPath)
-  }).then((mfiles) => {
-    files = mfiles
-    len = files.length
-    childPaths = files.map(file => path.join(parentPath, file))
-    const promises = childPaths.map(childPath => stat(childPath))
-    return Promise.all(promises)
-  })
+const statdir = async function(parentPath) {
+  const files = await fse.readdir(parentPath)
+  const childPaths = files.map(file => path.join(parentPath, file))
+  const promises = childPaths.map(childPath => stat(childPath))
+  const stats = await Promise.all(promises)
+  return stats
 }
 
 module.exports = {
