@@ -1,6 +1,14 @@
 
 const fse = require('fs-extra');
-const path = require('path');
+const pathlib = require('path');
+
+const stat = function(varpath) {
+  return fse.stat(varpath).then((stat) => {
+    stat.fullpath = path.resolve(varpath)
+    stat.filename = path.basename(stat.fullpath)
+    return stat
+  })
+}
 
 const statdir = function(parentPath) {
   let files, len, childPaths
@@ -11,15 +19,8 @@ const statdir = function(parentPath) {
     files = mfiles
     len = files.length
     childPaths = files.map(file => path.join(parentPath, file))
-    const promises = childPaths.map(childPath => fse.stat(childPath))
+    const promises = childPaths.map(childPath => stat(childPath))
     return Promise.all(promises)
-  }).then((stats) => {
-    for (let i = 0; i < stats; i++) {
-      const stat = stats[i]
-      stat.filename = files[i]
-      stat.fullpath = childPaths[i]
-    }
-    return stats
   })
 }
 
