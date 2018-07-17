@@ -1,9 +1,9 @@
 .dir {
-  color: red;
+  color: black;
 }
 
 .dir:hover {
-  color: black;
+  color: purple;
 }
 
 .file {
