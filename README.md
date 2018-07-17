@@ -8,7 +8,7 @@ Your average file manager
 git clone https://github.com/jarett-lee/yam.git
 cd yam
 npm install
-./node_modules/electron/dist/electron .
+npm start
 ```
 
 ## Built With
